@@ -1,101 +1,61 @@
+"use client"
+
 import Image from "next/image";
+import Search from "./components/Search";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+const router=useRouter()
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="border-2 border-black h-full w-full px-7 flex flex-col gap-4 bg-[#2f4553] overflow-y-scroll custom-scrollbar">
+      <Search/>
+      <div className="w-full bg-[#2f4553] flex flex-col gap-4">
+    <div className="flex w-[78%] rounded-lg border-2 border-[#2f4553] h-10 p-1 justify-between">
+      <button className="bg-[#0f212e] hover:bg-[#2f4553]">Lobby</button>
+      <button className="bg-[#0f212e] hover:bg-[#2f4553]">Lobby original</button>
+      <button className="bg-[#0f212e] hover:bg-[#2f4553]">Lobby Exclusive</button>
+      <button className="bg-[#0f212e] hover:bg-[#2f4553]">Lobby Releases</button>
+      <button className="bg-[#0f212e] hover:bg-[#2f4553]">Lobby shows</button>
+      <button className="bg-[#0f212e] hover:bg-[#2f4553]">Lobby</button>
+      <button className="bg-[#0f212e] hover:bg-[#2f4553]">Lobby</button>
+    </div>
+    <div className="text-white bg-[#2f4553] h-[40vh] flex flex-col gap-3">
+      <h1 className="bg-[#2f4553] text-white">Games Originals</h1>
+      <div className="w-full h-[45vh]  flex gap-3">
+        <div className="w-1/6  h-[41vh]">
+      <Image src="https://mediumrare.imgix.net/30688668d7d2d48d472edd0f1e2bca0758e7ec51cbab8c04d8b7f157848640e0?w=180&amp;h=236&amp;fit=min&amp;auto=format" alt=""width={180} 
+  height={236} className="cursor-pointer hover:-translate-y-2"/>
+  <p className="text-white text-sm">4789 <span className="text-gray-400">Playing</span> </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="w-1/6 mines h-[40vh]">
+      <Image src="https://mediumrare.imgix.net/15a51a2ae2895872ae2b600fa6fe8d7f8d32c9814766b66ddea2b288d04ba89c?w=360&h=472&fit=min&auto=format" alt=""width={180} 
+  height={236} className="cursor-pointer hover:-translate-y-2" onClick={()=>router.push('/mines')}/>
+  <p className="text-white text-sm">4789 <span className="text-gray-400">Playing</span> </p>
+        </div>
+        <div className="w-1/6  h-[40vh]">
+      <Image src="https://mediumrare.imgix.net/5cbb2498c956527e6584c6af216489b85bbb7a909c7d3c4e131a3be9bd1cc6bf?w=360&h=472&fit=min&auto=format" alt=""width={180} 
+  height={236} className="cursor-pointer hover:-translate-y-2"/>
+  <p className="text-white text-sm">4789 <span className="text-gray-400">Playing</span> </p>
+        </div>
+        <div className="w-1/6  h-[40vh]">
+      <Image src="https://mediumrare.imgix.net/c830595cbd07b2561ac76a365c2f01869dec9a8fe5e7be30634d78c51b2cc91e?w=360&h=472&fit=min&auto=format" alt=""width={180} 
+  height={236} className="cursor-pointer hover:-translate-y-2"/>
+  <p className="text-white text-sm">4789 <span className="text-gray-400">Playing</span> </p>
+        </div>
+        <div className="w-1/6  h-[40vh]">
+      <Image src="https://mediumrare.imgix.net/11caec5df20098884ae9071848e1951b8b34e5ec84a7241f2e7c5afd4b323dfd?w=360&h=472&fit=min&auto=format" alt=""width={180} 
+  height={236} className="cursor-pointer hover:-translate-y-2"/>
+  <p className="text-white text-sm">4789 <span className="text-gray-400">Playing</span> </p>
+        </div>
+        <div className="w-1/6  h-[40vh]">
+      <Image src="https://mediumrare.imgix.net/2c3e16f0a3b8cd8d979265e48dd6a169937a4a4d0acb05ad532ca8345a1e6f21?w=360&h=472&fit=min&auto=format" alt=""width={180} 
+  height={236} className="cursor-pointer hover:-translate-y-2"/>
+  <p className="text-white text-sm">4789 <span className="text-gray-400">Playing</span> </p>
+        </div>
+      </div>
+    </div>
+      </div>
     </div>
   );
 }
